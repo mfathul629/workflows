@@ -11,7 +11,6 @@ on:
         description: 'Torrent file URL'
 
         required: true
-
 jobs:
 
   download:
@@ -21,18 +20,13 @@ jobs:
     container: subekti13/torrent-downloader:latest
 
     steps:
-
-       
-
-        - name: Write .env File
+    
+          - name: Write .env File
 
           run: |
 
               echo '${{ secrets.DOTENV }}' >> .env
 
-        
-
-          
 
         - name: Dowload File
 
@@ -49,4 +43,3 @@ jobs:
         - name: Upload to Drive
 
           run: node /app/upload.js
-
